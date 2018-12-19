@@ -1,0 +1,13 @@
+name: jomash_config
+description: A starting point for Dart libraries or applications.
+environment:
+  sdk: '>=2.0.0 <3.0.0'
+dependencies:
+  observable_model:
+    path: ../observable_model.dart
+  json_annotation: any
+dev_dependencies:
+  json_serializable: any
+  build_runner: any
+  pedantic_pschiffmann:
+    git: https://github.com/pschiffmann/pedantic-pschiffmann.dart.git
