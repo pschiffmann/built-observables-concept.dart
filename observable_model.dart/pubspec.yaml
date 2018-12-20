@@ -1,0 +1,20 @@
+name: observable_model
+description: A starting point for Dart libraries or applications.
+# version: 1.0.0
+# homepage: https://www.example.com
+# author: Philipp Schiffmann <email@example.com>
+
+environment:
+  sdk: '>=2.0.0 <3.0.0'
+
+dependencies:
+  source_gen: any
+  build: any
+  mustache: ^1.0.2
+  observable: any
+
+dev_dependencies:
+  test: ^1.0.0
+  build_runner: any
+  pedantic_pschiffmann:
+    git: https://github.com/pschiffmann/pedantic-pschiffmann.dart.git

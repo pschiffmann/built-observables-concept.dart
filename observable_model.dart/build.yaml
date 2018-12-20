@@ -1,0 +1,8 @@
+builders:
+  observable_model:
+    import: "package:observable_model/builder.dart"
+    builder_factories: ["observableBuilder"]
+    build_extensions: {".dart": [".observable.g.part"]}
+    auto_apply: root_package
+    runs_before: ["source_gen|combining_builder"]
+    applies_builders: ["source_gen|combining_builder"]

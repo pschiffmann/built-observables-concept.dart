@@ -9,7 +9,7 @@ abstract class _GeneralConfiguration {
   @MonitoredField()
   String mashupTitle;
 
-  @MonitoredField(managed: true)
+  @ManagedField()
   List<App> get apps;
 }
 
@@ -18,6 +18,6 @@ abstract class _App {
   @MonitoredField()
   String name;
 
-  @MonitoredField(managed: true)
+  @ManagedField()
   Map<String, String> get hostToAppIdMappings;
 }
