@@ -19,8 +19,8 @@ class GeneralConfiguration extends _GeneralConfiguration {
   }
 
   @override
-  List get apps => _apps;
-  List _apps;
+  List<App> get apps => _apps;
+  List<App> _apps;
 
   /// Sends an event every time the value of a monitored property changes.
   Stream<void> get onChange =>

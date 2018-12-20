@@ -1,3 +1,4 @@
+import 'package:analyzer/dart/ast/ast.dart';
 import 'package:analyzer/dart/element/element.dart';
 import 'package:build/build.dart';
 import 'package:mustache/mustache.dart';
@@ -164,9 +165,15 @@ class ObservableGenerator extends GeneratorForAnnotation<Monitored> {
     }
 
     final field = getter.variable;
-    final result = FieldDefinition()
-      ..name = field.name
-      ..type = field.type?.displayName ?? 'dynamic';
+    final result = FieldDefinition()..name = field.name;
+    if (getter.isSynthetic) {
+      final astNode = annotatedElement.computeNode() as VariableDeclaration;
+      result.type = (astNode.parent as VariableDeclarationList).type.toString();
+    } else {
+      final astNode = annotatedElement.computeNode() as MethodDeclaration;
+      result.type = astNode.returnType.toString();
+    }
+
     if (coreListType.isExactlyType(field.type)) {
       result.constructor = 'ManagedList';
     } else if (coreMapType.isExactlyType(field.type)) {
